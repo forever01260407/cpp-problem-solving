@@ -24,20 +24,17 @@ int main()
     {
         int origin, num;
         char t;
-        ad.clear();
-        dp.clear();
         ad.resize(n);
         dp.resize(n, vector<int>(2, 0));
-        for (int k = 0; k < n; k++)
+        cin >> origin >> t >> t >> num >> t;
+        ad.clear();
+        dp.clear();
+        for (int i = 0; i < num; i++)
         {
-            cin >> origin >> t >> t >> num >> t;
-            for (int i = 0; i < num; i++)
-            {
-                int temp;
-                cin >> temp;
-                ad[origin].push_back(temp);
-                ad[temp].push_back(origin);
-            }
+            int temp;
+            cin >> temp;
+            ad[origin].push_back(temp);
+            ad[temp].push_back(origin);
         }
         // test case
         dfs(0, -1);
